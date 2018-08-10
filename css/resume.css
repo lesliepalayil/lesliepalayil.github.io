@@ -96,15 +96,59 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+:root {
+    --body-background-color: #333;
+    --resume-max-width: 1200px;
+    --resume-background-color: #fefefe; 
+    --resume-page-header-size: 2.8rem;
+    --resume-sidebar-background-color: #eee;
+    --resume-sidebar-border-color: #3f87a6;
+    --resume-sidebar-width: 30.2%;
+    --resume-content-width: 61.8%;
+    --resume-sidebar-header-size: 1.4rem;
+    --resume-content-header-size: 1.8rem;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
+    background: var(--body-background-color); 
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Slab', serif;    
+    font-family: 'Roboto Slab', serif;
+    font-weight: normal;
 }
 
+.resume {
+    display: flex;
+    max-width: var(--resume-max-width);
+    margin: 0 auto;
+    background: var(--resume-background-color);
+}
+
+.page-header {
+    font-size: var(--resume-page-header-size);
+}
+
+.sidebar {
+    flex: 1 0 var(--resume-sidebar-width);
+    box-sizing: border-box;
+    border-right: 1px solid var(--resume-sidebar-border-color);
+    background: var(--resume-sidebar-background-color);
+}
+
+.content {
+    flex: 1 0 var(--resume-content-width);
+    box-sizing: border-box;
+}
+
+.sidebar-block-header {
+    font-size: var(--resume-sidebar-header-size);
+}
+
+.content-block-header {
+    font-size: var(--resume-content-header-size);
+}
 
 
 
