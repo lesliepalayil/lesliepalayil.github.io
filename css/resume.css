@@ -97,9 +97,11 @@ textarea {
    Author's custom styles
    ========================================================================== */
 :root {
-    --body-background-color: #333;
+    --body-background-color: #ccc;
     --resume-max-width: 1200px;
-    --resume-background-color: #fefefe; 
+    --resume-min-width: 900px;
+    --resume-background-color: #fefefe;
+    --resume-shadow: 0 0 8px rgba(0,0,0,.6);
     --resume-page-header-size: 2.8rem;
     --resume-sidebar-background-color: #eee;
     --resume-sidebar-border-color: #3f87a6;
@@ -109,9 +111,16 @@ textarea {
     --resume-content-header-size: 1.8rem;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background: var(--body-background-color); 
+    background: var(--body-background-color);
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -121,9 +130,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .resume {
     display: flex;
+    height: 100%;
     max-width: var(--resume-max-width);
+    min-width: var(--resume-min-width);
     margin: 0 auto;
     background: var(--resume-background-color);
+    box-shadow: var(--resume-shadow);
 }
 
 .page-header {
@@ -132,12 +144,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar {
     flex: 1 0 var(--resume-sidebar-width);
+    height: 100%;
     box-sizing: border-box;
     border-right: 1px solid var(--resume-sidebar-border-color);
     background: var(--resume-sidebar-background-color);
 }
 
 .content {
+    height: 100%;
     flex: 1 0 var(--resume-content-width);
     box-sizing: border-box;
 }
