@@ -102,13 +102,15 @@ textarea {
     --resume-min-width: 900px;
     --resume-background-color: #fefefe;
     --resume-shadow: 0 0 8px rgba(0,0,0,.6);
-    --resume-page-header-size: 2.8rem;
+    --resume-page-header-size: 2.2rem;
+    --resume-page-header-top-margin: 0.6rem;
     --resume-sidebar-background-color: #eee;
     --resume-sidebar-border-color: #3f87a6;
     --resume-sidebar-width: 30.2%;
     --resume-content-width: 61.8%;
     --resume-sidebar-header-size: 1.4rem;
-    --resume-content-header-size: 1.8rem;
+    --resume-content-header-size: 1.4rem;
+    --resume-standard-padding: 1.4rem;
 }
 
 html {
@@ -131,15 +133,21 @@ h1, h2, h3, h4, h5, h6 {
 .resume {
     display: flex;
     height: 100%;
+    margin: 0 auto;
     max-width: var(--resume-max-width);
     min-width: var(--resume-min-width);
-    margin: 0 auto;
     background: var(--resume-background-color);
     box-shadow: var(--resume-shadow);
 }
 
 .page-header {
     font-size: var(--resume-page-header-size);
+    margin: var(--resume-page-header-top-margin) 0 0;
+    padding: 0 var(--resume-standard-padding);
+}
+
+.page-subheader {
+    padding: 0 var(--resume-standard-padding);
 }
 
 .sidebar {
@@ -162,6 +170,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .content-block-header {
     font-size: var(--resume-content-header-size);
+}
+
+.sidebar > .sidebar-block,
+.content > .content-block {
+    padding: 0 var(--resume-standard-padding);
 }
 
 
