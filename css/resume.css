@@ -104,6 +104,8 @@ textarea {
     --resume-shadow: 0 0 8px rgba(0,0,0,.6);
     --resume-page-header-size: 2.2rem;
     --resume-page-header-top-margin: 0.6rem;
+    --resume-page-subheader-margin: 1rem;
+
     --resume-sidebar-background-color: #eee;
     --resume-sidebar-border-color: #3f87a6;
     --resume-sidebar-width: 30.2%;
@@ -111,6 +113,17 @@ textarea {
     --resume-sidebar-header-size: 1.4rem;
     --resume-content-header-size: 1.4rem;
     --resume-standard-padding: 1.4rem;
+    --resume-standard-margin: 0.67rem;
+
+    --content-list-period-width: 6rem;
+    --content-list-header-font-size: 1.2rem;
+
+    --content-list-period-box-font-size: 0.6rem;
+    --content-list-period-box-width: 80px;
+    --content-list-period-box-height: 80px;
+    --content-list-period-box-border: 40px;
+    --content-list-period-box-border: 40px;
+
 }
 
 html {
@@ -132,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .resume {
     display: flex;
-    height: 100%;
+    min-height: 100%;
     margin: 0 auto;
     max-width: var(--resume-max-width);
     min-width: var(--resume-min-width);
@@ -148,18 +161,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-subheader {
     padding: 0 var(--resume-standard-padding);
+    margin-bottom: var(--resume-page-subheader-margin);
 }
 
 .sidebar {
     flex: 1 0 var(--resume-sidebar-width);
-    height: 100%;
+    min-height: 100%;
     box-sizing: border-box;
     border-right: 1px solid var(--resume-sidebar-border-color);
     background: var(--resume-sidebar-background-color);
 }
 
 .content {
-    height: 100%;
+    min-height: 100%;
     flex: 1 0 var(--resume-content-width);
     box-sizing: border-box;
 }
@@ -177,7 +191,111 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 var(--resume-standard-padding);
 }
 
+.list-contact {
+    padding: 0;
+    margin: 0;
+}
 
+.list-contact .list-contact-item {
+    list-style-type: none;
+}
+
+.content-list {
+    padding: 0;
+    margin: 0;
+}
+
+.content-list, .content-list .content-list-item {
+    list-style-type: none;
+}
+
+.content-list .content-list-item {
+    display: flex;
+}
+
+.content-list-period::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--content-list-period-width)/2 - 7px);
+    margin-left: -1px; 
+    width: 0;
+    border-right: 1px dashed #ccc;
+    content: "";
+    z-index: 0;
+}
+
+.content-list .content-list-item:last-child .content-list-period::before {
+    display: none;
+}
+
+.content-list-period {
+    box-sizing: border-box;
+    position: relative;
+    margin-right: var(--content-list-period-margin);
+    width: var(--content-list-period-width);
+    padding-bottom: 1rem;
+}
+
+.content-list-period-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: var(--content-list-period-box-width);
+    height: var(--content-list-period-box-height);
+    border-radius: var(--content-list-period-box-border);
+    font-size: .8rem;
+    box-sizing: border-box;
+    text-align: center;
+    background: #efefef;
+    z-index: 1;
+}
+
+.content-list-period-box-present {
+    background: rgb(110, 199, 122);
+}
+
+.content-list-period-box-present .period-end {
+    background: #efefef;
+    border-radius: 0 0 var(--content-list-period-box-border) var(--content-list-period-box-border);
+}
+
+.content-list-period-box span {
+    display: flex;
+    flex: 1 0 50%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
+
+.content-list-period-box span.period-start {
+    border-bottom: 1px solid #fff;
+    padding-top: 10px;
+}
+
+.content-list-period-box span.period-end {
+    padding-bottom: 10px;
+}
+
+.content-list-details {
+    flex: 1 0 0%;
+    box-sizing: border-box;
+    padding-bottom: 1rem;
+}
+
+.content-list-header {
+    font-size: var(--content-list-header-font-size);
+    margin: 0;
+}
+
+.content-list-subheader {
+    margin: 0 0 10px;
+}
+
+.content-list-data {
+    line-height: 1.4;
+}
 
 
 
