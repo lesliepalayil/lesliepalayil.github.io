@@ -100,31 +100,44 @@ textarea {
     --body-background-color: #ccc;
     --resume-max-width: 1200px;
     --resume-min-width: 900px;
+    --resume-standard-padding: 1.4rem;
+    --resume-standard-margin: 0.67rem;
+
     --resume-background-color: #fefefe;
     --resume-shadow: 0 0 8px rgba(0,0,0,.6);
     --resume-page-header-size: 2.2rem;
     --resume-page-header-top-margin: 0.6rem;
     --resume-page-subheader-margin: 1rem;
-
+    
     --resume-sidebar-background-color: #eee;
-    --resume-sidebar-border-color: #3f87a6;
+    --resume-sidebar-border-color: #eee;
     --resume-sidebar-width: 30.2%;
+    --resume-contact-icon-size: 22px;
+    --resume-contact-icon-margin: 12px;
+    --resume-contact-icon-listitem-margin-bottom: .8rem;
     --resume-content-width: 61.8%;
     --resume-sidebar-header-size: 1.4rem;
-    --resume-content-header-size: 1.4rem;
-    --resume-standard-padding: 1.4rem;
-    --resume-standard-margin: 0.67rem;
 
+    --resume-content-header-size: 1.4rem;
     --content-list-period-width: 6rem;
     --content-list-header-font-size: 1.2rem;
-
     --content-list-period-box-font-size: 0.6rem;
     --content-list-period-box-width: 80px;
     --content-list-period-box-height: 80px;
     --content-list-period-box-border: 40px;
     --content-list-period-box-border: 40px;
+    --content-list-period-line-color: #ccc;
+    --content-list-period-line-borderstyle: dashed;
+    --content-list-period-line-width: 1px;
+    --content-list-period-bottom-padding: 1rem;
+    --content-list-period-font-size: .8rem;
+    --content-list-period-current-color: rgb(110, 199, 122);
+    --content-list-period-default-color: #efefef;
+    --content-list-period-color: #000;
+    --content-list-period-sepcolor: #fff;
 
 }
+
 
 html {
     height: 100%;
@@ -162,6 +175,31 @@ h1, h2, h3, h4, h5, h6 {
 .page-subheader {
     padding: 0 var(--resume-standard-padding);
     margin-bottom: var(--resume-page-subheader-margin);
+}
+
+.list-contact-item {
+    margin-bottom: var(--resume-contact-icon-listitem-margin-bottom);
+}
+
+.contact-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: var(--resume-contact-icon-size);
+    height: var(--resume-contact-icon-size);
+    margin-right: var(--resume-contact-icon-margin);
+    background-size: var(--resume-contact-icon-size); 
+}
+
+.contact-icon-email {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAACBElEQVR4Ae2aMS9DYRSGD4YO/AEJtXQjTZ3zMyz+CQlWq5hITPwGwdCdzST4DTaTAND2Su7mS3hb53N7pO/zbU2+9j5f75PepEcIIYQQQgghJGVh1tb0zO6sGPK60zPdWJiVQZif0kPtWRFnac+O56ekPxo1u7Ai3tLrRk36QfesiLn0QDA2bZ2wAl1tYIFNKwKvLUHoeWQBvcYCt5EF7EkQ9pxsWbaboV3ujS2nrw0sUP4q7Gi38ovv6G5zUsQvUNJq2WWll3/ZaklJFoGSCVvRx0pCfdBVGRf5rcDL9xuaM9b+c4F2c0ZKcgkkuKMG0UpCdgF31CDaCgScUYNo3QL6mmw5+XpPuqMG0SbNnbgFwAf4o27jA/II4K8YRQ2ihbeoQwBE5oja8X5Y4O3HE1vCJ+aMdin9Rt0CeaMGTR2j3X4BELU32goEcNSOaP0C9p4zQn+0WQT8UeNohyKAo3ZGW4EAjhpHm1ngI+/DmCPaCgRgpCDaAAIgahBtIAEcNY42k0Anz/M9iDaAAIwaRBtBAEcNog0gAKPG0WYW8J4VWPEFKECB3mgLUIACVoywAAUoQAEKUGBsxAUoQAGx+9AC94LQq/8+crYdWmBbEItz2o07dml1weh+9MFXQKOmV/FHj9FfEEfRhr/1CA1/J1jd1mOM39uprVtdCCGEEEIIISThE9E/U+ur0UpiAAAAAElFTkSuQmCC);
+}
+
+.contact-icon-location {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAADpElEQVR4Ae3aA9DsSBQF4DNa2+ZvZNL3lNa2d0tr24W1bdu2bdu2beO5l8/InX/6JpmqfKdcgz4dA4VCoVAohNQ7mSwrB8k5cjOf4gcyiL/zA3lcbpZzeIAsyxpyrMLV5Ab+Tj+J/C7XcTVUkDcLTCG7yWf0ushnsnvb5MiNqtuZX9I3mC+5A6rIHtfme/QDzHtuTWSqIifSNxc5IbMtgtPLffTNR+7j9EhffW6+TR8ob0XzIF2cTz6nDxf5nPMhPV0z8336wHm/a2akgzU+TW+Qp1M6TvMieqNcBHvcgN4wG8BW2+TyuWUB+dz4FEP2obeN7Gt76PrNvMBvhoc1OZbePnKM2e5TfqVPIb8Y7U5lHf0gZJBc5TaJ43iGvxO7TeQqGUT9t9eBBblKPYR73PwYh5ufd6sLXA0DJf6kHMCRmLCSHE6vyk8oIbR4MeXsHY5JcEfQaxIvhtDcnrqVJ2HuSryHXpG9EJqcr9l0k8/r++ZVbc7nITR5RFHgMijIZYpfegSh8YNQp2Ka00H5EKHxe/qkRJ1QiDoVU/E9QpMR9EnpnBYKndMqlsBwhMY/6JPSNh0U2qajT8wfCI2f0CfF9UDB9SgKfILQ+EKaGzFfQGiqA9AVUOAVqgNiaHK66kC2IBJEC2oOZHI6QpPNdLcJk04ldLcjZTOEVu9Vn4tOAo+i16Tei+DK/KPJ89GSHEavyh8oIzy5o5kLmv6FeI/2+3InLHCrRi8pXT2egdO7uttEruIQenW2MrqlKyPo7SMjemeCDT5An0IegBW3XSoFtoeVaGoZZD18GcSpYEcuNC9wISzFi1oXiBeFLb5tOv/vwppsZlpgM5irykdmBT5GFfbcFlYF3BYwYr8M7OfffjuQzZGaMt8MXuAtlJEet17oAm49pEteClrgFaTNLR/0+LsC0sdrgxW4FlnonSPMU0v5tW92ZIPb257/2yvJ403P/xMoITtRJ4c1VWBY1IlsydFNzf/RyNo8U/KTARf4dJ4pkb14rQHv/ddCPvCKARW4AnnRNh2/aHj4X7RNh/yIl260gFsK+dLYW9RyEvKGNXlOXeB51pA/9bn5nWr437u5kE/x0jI8+RG2WxL5JQcmFjgQuVbmU5Ms8DTKyLe+eeWHic7+j9E8yD+uOOEtQYZzRbQG2W2CBXaDHfsX1OR8tJSKPDnW8J9EBa0lmk2+HjX8r6PZ0Hoo/z8bHkJBa5Kt6ella7QuHsWjYKZQKBQKhb8AaFXSW3c/idsAAAAASUVORK5CYII=)
+}
+
+.contact-icon-phone {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAADFElEQVR4Ae3aA6wmSxCG4bq2bfNn13dt27Zt21zbtm3btm2bR7Mb9WrUSf6T6qSfijnvWOTHcRzHcRzHwZUoi3nwQqaAZ+FHsYvP6+DFGS4tM6AnvHjDRSojMWA7vLjD35E8vNMgoArJg7XxA9CA5OEFBgGtSR5MiR/APUgeHh4/AJNJHvQyCNhO8nA7ePHnylPkBVQwCVA3ygt43ySAPyFp1O1GAfVJmvTpRgHTSB7ebJKgTpMXMNQo4C2SBtVNAtCKpOHnTAJ4AUmTONkkAFtJHp4YP4BHSQwobxDwnMSAR2Ofg/4kiRLHclGMdb+TXyapuHtkwJrstSSXeiHqUSZ5Hkl24ZGhNxRdcTRJh9qBB+5/dBDJh1sCFv9tsgXm+iZ8Tbbg73wDNl56PNnhiuN4vV8ClyNbqD/9ApCXvZDskDoJ23wTepEtuBQ833mJ7KBO453+NxJXnkJ24JLw/Iabkx3OPQqL/BPUC2QH9aB/AO/IZskO3MY/ActwFtkgcWbgven4c48iG/An8PyHu9MhdiR0D0xoTDbInshLghJQ1o6Ea5EfmPAD2UB9BS9wSlh7JOhpdekRJN2lx2NScAIPwwkUg7qHO2I1T+Mq/EDicCpeyTP8DmY985CiCPwkF8LTs5W78e/8QDE+5+FKbAxJ2B7+ySOdxLaA7bcZC3kC+nEb1OaS+CyHL87UbciDFzJNg46GxMn61jDO/Eq5ws/DC50ZDDrQIRhssPi5vePFsxFboQD/6wPU9CO6Hh6d2y/KG6K2g7qGNLwOz3jyKJfSV/CSqP/quAUuod0ySm8xo8n5jTbGRy5EPqohhWXwhAXojyEd4eVuqDjgc+TbGaBlruMltgboSxT3tjRAOwif8RY7A7T0uWhva4CGh7HYzgAtfQwqIs/OAE1dgNrIszNAy17IdVFgZ4CWvggNsd3WAP0krd5Cfy6CeUA+yZE8Dz9gplkAzydp+FJ8iPbYFDOhGgl1iLoRv6E/loeu/5WifynRx8c1eIn/4OY8iMfwVMzDCmxEHjzu7v/1wXEcx3Ecx9kFjAwFDnwzY+oAAAAASUVORK5CYII=)
 }
 
 .sidebar {
@@ -220,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
     left: calc(var(--content-list-period-width)/2 - 7px);
     margin-left: -1px; 
     width: 0;
-    border-right: 1px dashed #ccc;
+    border-right: var(--content-list-period-line-width) var(--content-list-period-line-borderstyle) var(--content-list-period-line-color);
     content: "";
     z-index: 0;
 }
@@ -234,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     margin-right: var(--content-list-period-margin);
     width: var(--content-list-period-width);
-    padding-bottom: 1rem;
+    padding-bottom: var(--content-list-period-bottom-padding);
 }
 
 .content-list-period-box {
@@ -244,20 +282,21 @@ h1, h2, h3, h4, h5, h6 {
     width: var(--content-list-period-box-width);
     height: var(--content-list-period-box-height);
     border-radius: var(--content-list-period-box-border);
-    font-size: .8rem;
+    font-size: var(--content-list-period-font-size);
     box-sizing: border-box;
     text-align: center;
-    background: #efefef;
+    background: var(--content-list-period-default-color);
     z-index: 1;
 }
 
 .content-list-period-box-present {
-    background: rgb(110, 199, 122);
+    background: var(--content-list-period-current-color);
 }
 
 .content-list-period-box-present .period-end {
-    background: #efefef;
+    background: var(--content-list-period-default-color);
     border-radius: 0 0 var(--content-list-period-box-border) var(--content-list-period-box-border);
+    
 }
 
 .content-list-period-box span {
@@ -266,11 +305,11 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: var(--content-list-period-color);
 }
 
 .content-list-period-box span.period-start {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--content-list-period-sepcolor);
     padding-top: 10px;
 }
 
