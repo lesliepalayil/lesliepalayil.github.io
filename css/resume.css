@@ -98,6 +98,7 @@ textarea {
    ========================================================================== */
 :root {
     --body-background-color: #ccc;
+    --body-font-size: .9rem;
     --resume-max-width: 1200px;
     --resume-min-width: 900px;
     --resume-standard-padding: 1.4rem;
@@ -108,7 +109,9 @@ textarea {
     --resume-page-header-size: 2.2rem;
     --resume-page-header-top-margin: 0.6rem;
     --resume-page-subheader-margin: 1rem;
-    
+    --resume-label-color: #444;
+    --resume-sep-color: #999;
+
     --resume-sidebar-background-color: #eee;
     --resume-sidebar-border-color: #eee;
     --resume-sidebar-width: 30.2%;
@@ -117,25 +120,30 @@ textarea {
     --resume-contact-icon-listitem-margin-bottom: .8rem;
     --resume-content-width: 61.8%;
     --resume-sidebar-header-size: 1.4rem;
+    --resume-sidebar-header-bottom-margin: .4rem;
+    --sidebar-list-bottom-margin: .4rem;
+    --sidebar-data-bottom-margin: 1.4rem;
+    --sidebar-toolkit-list-item-padding: 0 .6rem .4rem 0;
+    --sidebar-personal-label-width: 45%;
 
     --resume-content-header-size: 1.4rem;
-    --content-list-period-width: 6rem;
-    --content-list-header-font-size: 1.2rem;
-    --content-list-period-box-font-size: 0.6rem;
-    --content-list-period-box-width: 80px;
-    --content-list-period-box-height: 80px;
-    --content-list-period-box-border: 40px;
-    --content-list-period-box-border: 40px;
-    --content-list-period-line-color: #ccc;
-    --content-list-period-line-borderstyle: dashed;
-    --content-list-period-line-width: 1px;
-    --content-list-period-bottom-padding: 1rem;
-    --content-list-period-font-size: .8rem;
-    --content-list-period-current-color: rgb(110, 199, 122);
-    --content-list-period-default-color: #efefef;
-    --content-list-period-color: #000;
-    --content-list-period-sepcolor: #fff;
-
+    --list-content-period-width: 6rem;
+    --list-content-header-font-size: 1.2rem;
+    --list-content-period-box-width: 66px;
+    --list-content-period-box-height: 75px;
+    --list-content-period-start-top-padding: 16px;
+    --list-content-period-box-border-radius: calc(var(--list-content-period-box-width)/2);
+    --list-content-period-line-color: #ccc;
+    --list-content-period-line-borderstyle: dashed;
+    --list-content-period-line-width: 1px;
+    --list-content-period-bottom-padding: 1rem;
+    --list-content-period-font-size: .75rem;
+    --list-content-period-current-color: #fde770;
+    --list-content-period-current-font-color: #000;
+    --list-content-period-default-color: rgba(245, 245, 245, 1);
+    --list-content-period-color: #444;
+    --list-content-period-dash-border: 1px dotted var(--list-content-period-color);
+    --list-content-period-dash-width: 8px;
 }
 
 
@@ -146,6 +154,7 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     background: var(--body-background-color);
+    font-size: var(--body-font-size);
     margin: 0;
     padding: 0;
     height: 100%;
@@ -179,6 +188,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .list-contact-item {
     margin-bottom: var(--resume-contact-icon-listitem-margin-bottom);
+}
+
+.resume-label {
+    font-family: 'Roboto Slab', serif;
+    font-weight: normal;
+    color: var(--resume-label-color);
+}
+
+.sep::before {
+    content: "|";
+    color: var(--resume-sep-color);
 }
 
 .contact-icon {
@@ -218,6 +238,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar-block-header {
     font-size: var(--resume-sidebar-header-size);
+    margin-bottom: var(--resume-sidebar-header-bottom-margin);
 }
 
 .content-block-header {
@@ -229,6 +250,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 var(--resume-standard-padding);
 }
 
+.sidebar-block-data {
+    margin-bottom: var(--sidebar-data-bottom-margin);
+}
+
 .list-contact {
     padding: 0;
     margin: 0;
@@ -238,101 +263,144 @@ h1, h2, h3, h4, h5, h6 {
     list-style-type: none;
 }
 
-.content-list {
+.list-skills, .list-toolkit, .list-hobby, .list-personal {
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.content-list, .content-list .content-list-item {
-    list-style-type: none;
+.list-skills .list-skills-item, .list-hobby .list-hobby-item, .list-personal-item {
+    margin-bottom: var(--sidebar-list-bottom-margin);
 }
 
-.content-list .content-list-item {
+.list-personal-item {
     display: flex;
 }
 
-.content-list-period::before {
+.list-personal-item .resume-label {
+    width: var(--sidebar-personal-label-width);
+}
+
+.list-toolkit {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.list-toolkit .list-toolkit-item {
+    padding: var(--sidebar-toolkit-list-item-padding);
+}
+
+.list-content {
+    padding: 0;
+    margin: 0;
+}
+
+.list-content, .list-content .list-content-item {
+    list-style-type: none;
+}
+
+.list-content .list-content-item {
+    display: flex;
+}
+
+.list-content-period::before {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: calc(var(--content-list-period-width)/2 - 7px);
+    left: calc(var(--list-content-period-width)/2 - 14px);
     margin-left: -1px; 
     width: 0;
-    border-right: var(--content-list-period-line-width) var(--content-list-period-line-borderstyle) var(--content-list-period-line-color);
+    border-right: var(--list-content-period-line-width) var(--list-content-period-line-borderstyle) var(--list-content-period-line-color);
     content: "";
     z-index: 0;
 }
 
-.content-list .content-list-item:last-child .content-list-period::before {
+.list-content .list-content-item:last-child .list-content-period::before {
     display: none;
 }
 
-.content-list-period {
+.list-content-period {
     box-sizing: border-box;
     position: relative;
-    margin-right: var(--content-list-period-margin);
-    width: var(--content-list-period-width);
-    padding-bottom: var(--content-list-period-bottom-padding);
+    margin-right: var(--list-content-period-margin);
+    width: var(--list-content-period-width);
+    padding-bottom: var(--list-content-period-bottom-padding);
 }
 
-.content-list-period-box {
+.list-content-period-box {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: var(--content-list-period-box-width);
-    height: var(--content-list-period-box-height);
-    border-radius: var(--content-list-period-box-border);
-    font-size: var(--content-list-period-font-size);
+    width: var(--list-content-period-box-width);
+    height: var(--list-content-period-box-height);
+    border-radius: var(--list-content-period-box-border-radius) var(--list-content-period-box-border-radius) 0 0;
+    font-size: var(--list-content-period-font-size);
     box-sizing: border-box;
     text-align: center;
-    background: var(--content-list-period-default-color);
+    background: var(--list-content-period-default-color);
     z-index: 1;
 }
 
-.content-list-period-box-present {
-    background: var(--content-list-period-current-color);
-}
-
-.content-list-period-box-present .period-end {
-    background: var(--content-list-period-default-color);
-    border-radius: 0 0 var(--content-list-period-box-border) var(--content-list-period-box-border);
-    
-}
-
-.content-list-period-box span {
+.list-content-period-box span {
     display: flex;
     flex: 1 0 50%;
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    color: var(--content-list-period-color);
+    color: var(--list-content-period-color);
 }
 
-.content-list-period-box span.period-start {
-    border-bottom: 1px solid var(--content-list-period-sepcolor);
-    padding-top: 10px;
+.list-content-period-box span.period-start {
+    padding-top: var(--list-content-period-start-top-padding);
 }
 
-.content-list-period-box span.period-end {
+.list-content-period-box span.period-end {
+    position: relative;
+}
+
+.list-content-period-box span.period-end::before {
+    position: absolute;
+    top: 2px;
+    left: calc(var(--list-content-period-box-width)/2 - var(--list-content-period-dash-width)/2);
+    width: var(--list-content-period-dash-width);
+    border-top: var(--list-content-period-dash-border);
+    content: "";
+}
+
+.list-content-period-box.list-content-period-box-present {
+    background: var(--list-content-period-current-color);
+}
+
+.list-content-period-box.list-content-period-box-present span {
+    color: var(--list-content-period-current-font-color);
+}
+
+.list-content-period-box.list-content-period-box-present span.period-end {
+    background: var(--list-content-period-default-color);
     padding-bottom: 10px;
 }
 
-.content-list-details {
+.list-content-period-box.list-content-period-box-present span.period-end::before {
+    display: none;
+}
+
+.list-content-details {
     flex: 1 0 0%;
     box-sizing: border-box;
     padding-bottom: 1rem;
 }
 
-.content-list-header {
-    font-size: var(--content-list-header-font-size);
+.list-content-header {
+    font-size: var(--list-content-header-font-size);
     margin: 0;
 }
 
-.content-list-subheader {
+.list-content-subheader {
     margin: 0 0 10px;
 }
 
-.content-list-data {
+.list-content-data {
     line-height: 1.4;
 }
 
