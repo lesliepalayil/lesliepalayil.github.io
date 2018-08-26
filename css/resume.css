@@ -97,7 +97,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 :root {
-    --body-background-color: #ccc;
+    --body-background-color: #9ca9b3;
     --body-font-size: .9rem;
     --resume-max-width: 1200px;
     --resume-min-width: 900px;
