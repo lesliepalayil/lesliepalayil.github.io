@@ -123,7 +123,7 @@ textarea {
     --resume-sidebar-header-bottom-margin: .4rem;
     --sidebar-list-bottom-margin: .4rem;
     --sidebar-data-bottom-margin: 1.4rem;
-    --sidebar-toolkit-list-item-padding: 0 .6rem .4rem 0;
+    --sidebar-toolkit-list-item-padding: 0 1rem .4rem 0;
     --sidebar-personal-label-width: 45%;
 
     --resume-content-header-size: 1.4rem;
