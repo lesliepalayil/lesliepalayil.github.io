@@ -97,6 +97,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 :root {
+    --resume-default-text-color: #222;
     --resume-default-font: 'Roboto', sans-serif;
     --resume-label-font: 'Roboto Slab', sans-serif;
     --body-background-color: #c3c3c3;
@@ -463,6 +464,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .resume-content-key-value .resume-label {
+    color: var(--resume-default-text-color);
     font-family: var(--resume-default-font);
     box-sizing: border-box;
     width: var(--resume-keyvalue-label-width);
