@@ -132,7 +132,7 @@ textarea {
     --list-content-header-font-size: 1.2rem;
     --list-content-period-box-width: 66px;
     --list-content-period-box-height: 75px;
-    --list-content-period-start-top-padding: 16px;
+    --list-content-period-start-top-padding: 10px;
     --list-content-period-box-border-radius: calc(var(--list-content-period-box-width)/2);
     --list-content-period-line-color: #ccc;
     --list-content-period-line-borderstyle: dashed;
