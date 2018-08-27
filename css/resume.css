@@ -103,7 +103,7 @@ textarea {
     --resume-min-width: 900px;
     --resume-standard-padding: 1.4rem;
     --resume-standard-margin: 0.67rem;
-    --resume-page-bottom-padding: .6rem;
+    --resume-bottom-padding: 2rem;
 
     --resume-background-color: #fefefe;
     --resume-shadow: 0 0 4px rgba(0,0,0,.3);
@@ -166,7 +166,7 @@ body {
     background: var(--body-background-color);
     font-size: var(--body-font-size);
     margin: 0;
-    padding: 0 0 var(--resume-page-bottom-padding);
+    padding: 0;
     height: 100%;
 }
 
@@ -238,12 +238,14 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     border-right: 1px solid var(--resume-sidebar-border-color);
     background: var(--resume-sidebar-background-color);
+    padding-bottom: var(--resume-bottom-padding);
 }
 
 .content {
     min-height: 100%;
     flex: 1 0 var(--resume-content-width);
     box-sizing: border-box;
+    padding-bottom: var(--resume-bottom-padding);
 }
 
 .sidebar-block-header {
