@@ -97,6 +97,8 @@ textarea {
    Author's custom styles
    ========================================================================== */
 :root {
+    --resume-default-font: 'Roboto', sans-serif;
+    --resume-label-font: 'Roboto Slab', sans-serif;
     --body-background-color: #9ca9b3;
     --body-font-size: .9rem;
     --resume-max-width: 1200px;
@@ -119,14 +121,18 @@ textarea {
     --resume-contact-icon-size: 22px;
     --resume-contact-icon-margin: 12px;
     --resume-contact-icon-listitem-margin-bottom: .8rem;
-    --resume-content-width: 61.8%;
     --resume-sidebar-header-size: 1.4rem;
     --resume-sidebar-header-bottom-margin: .4rem;
     --sidebar-list-bottom-margin: .4rem;
     --sidebar-data-bottom-margin: 1.4rem;
     --sidebar-toolkit-list-item-padding: 0 1rem .4rem 0;
     --sidebar-personal-label-width: 45%;
-
+    --skills-bar-height: 2px;
+    --skills-value-bar-color: #666;
+    --skills-padding-bottom: .35rem;
+    --skills-bar-background-color: #fff;
+   
+    --resume-content-width: 61.8%;
     --resume-content-header-size: 1.4rem;
     --list-content-period-width: 6rem;
     --list-content-header-font-size: 1.2rem;
@@ -162,7 +168,7 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--resume-default-font);
     background: var(--body-background-color);
     font-size: var(--body-font-size);
     margin: 0;
@@ -171,7 +177,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Slab', serif;
+    font-family: var(--resume-label-font);
     font-weight: normal;
 }
 
@@ -201,7 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .resume-label {
-    font-family: 'Roboto Slab', serif;
+    font-family: var(--resume-label-font);
     font-weight: normal;
     color: var(--resume-label-color);
 }
@@ -284,6 +290,21 @@ h1, h2, h3, h4, h5, h6 {
 .list-skills .list-skills-item, .list-hobby .list-hobby-item, .list-personal-item {
     margin-bottom: var(--sidebar-list-bottom-margin);
 }
+
+
+.list-skills .list-skills-item {
+   padding-bottom: var(--skills-padding-bottom)
+}
+
+.skillrating {
+   height: var(--skills-bar-height);
+   background: var(--skills-bar-background-color)
+}
+
+.skillrating-value {
+   height: 100%;
+   background-color: var(--skills-value-bar-color);
+}  
 
 .list-personal-item {
     display: flex;
@@ -443,6 +464,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .resume-content-key-value .resume-label {
+    font-family: var(--resume-default-font);
     box-sizing: border-box;
     width: var(--resume-keyvalue-label-width);
     padding-right: var(--resume-keyvalue-label-padding);
