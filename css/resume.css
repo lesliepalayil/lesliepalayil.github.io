@@ -106,7 +106,7 @@ textarea {
     --resume-page-bottom-padding: .6rem;
 
     --resume-background-color: #fefefe;
-    --resume-shadow: 0 0 8px rgba(0,0,0,.6);
+    --resume-shadow: 0 0 4px rgba(0,0,0,.3);
     --resume-page-header-size: 2.2rem;
     --resume-page-header-top-margin: 0.6rem;
     --resume-page-subheader-margin: 1.5rem;
@@ -141,7 +141,8 @@ textarea {
     --list-content-period-font-size: .75rem;
     --list-content-period-current-color: #fde770;
     --list-content-period-current-font-color: #000;
-    --list-content-period-default-color: rgba(245, 245, 245, 1);
+    --list-content-period-default-color: rgba(240, 240, 240, 1);
+    --list-content-period-end-color: rgba(252, 252, 252, 1);
     --list-content-period-color: #444;
     --list-content-period-dash-border: 1px dotted var(--list-content-period-color);
     --list-content-period-dash-width: 8px;
@@ -348,7 +349,7 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     text-align: center;
     background: var(--list-content-period-default-color);
-    box-shadow: 2px 1px 1px rgba(0,0,0,.2);
+    box-shadow: -2px 1px 1px rgba(0,0,0,.3);
     z-index: 1;
 }
 
@@ -367,15 +368,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .list-content-period-box span.period-end {
-    position: relative;
-}
-
-.list-content-period-box span.period-end::before {
-    position: absolute;
-    top: -0.435rem;
-    left: calc(var(--list-content-period-box-width)/2 - var(--list-content-period-dash-width)/2);
-    width: var(--list-content-period-dash-width);
-    content: "...";
+   position: relative;
+   background: var(--list-content-period-end-color);
 }
 
 .list-content-period-box.list-content-period-box-present {
@@ -387,8 +381,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .list-content-period-box.list-content-period-box-present span.period-end {
-    background: var(--list-content-period-default-color);
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .list-content-period-box.list-content-period-box-present span.period-end::before {
