@@ -103,6 +103,7 @@ textarea {
     --resume-min-width: 900px;
     --resume-standard-padding: 1.4rem;
     --resume-standard-margin: 0.67rem;
+    --resume-page-bottom-padding: .6rem;
 
     --resume-background-color: #fefefe;
     --resume-shadow: 0 0 8px rgba(0,0,0,.6);
@@ -164,7 +165,7 @@ body {
     background: var(--body-background-color);
     font-size: var(--body-font-size);
     margin: 0;
-    padding: 0;
+    padding: 0 0 var(--resume-page-bottom-padding);
     height: 100%;
 }
 
@@ -347,6 +348,7 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     text-align: center;
     background: var(--list-content-period-default-color);
+    box-shadow: 2px 1px 1px rgba(0,0,0,.2);
     z-index: 1;
 }
 
@@ -370,11 +372,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .list-content-period-box span.period-end::before {
     position: absolute;
-    top: 5px;
+    top: -0.435rem;
     left: calc(var(--list-content-period-box-width)/2 - var(--list-content-period-dash-width)/2);
     width: var(--list-content-period-dash-width);
-    border-top: var(--list-content-period-dash-border);
-    content: "";
+    content: "...";
 }
 
 .list-content-period-box.list-content-period-box-present {
