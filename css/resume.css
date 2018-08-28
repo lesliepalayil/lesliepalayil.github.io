@@ -139,6 +139,7 @@ textarea {
    
     --resume-content-width: 61.8%;
     --resume-content-header-size: 1.4rem;
+    --resume-content-left-padding: 2.2rem;
     --list-content-period-width: 6rem;
     --list-content-header-font-size: 1.2rem;
     --list-content-period-box-width: 66px;
@@ -267,8 +268,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: var(--resume-content-header-size);
 }
 
-.sidebar > .sidebar-block,
-.content > .content-block {
+.sidebar > .sidebar-block {
     padding: 0 var(--resume-standard-padding);
 }
 
@@ -341,6 +341,9 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--toolkit-level3-color);
 }
 
+.content > .content-block {
+    padding: 0 var(--resume-standard-padding) 0 var(--resume-content-left-padding);
+}
 
 .list-content {
     padding: 0;
