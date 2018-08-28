@@ -127,6 +127,10 @@ textarea {
     --sidebar-list-bottom-margin: .4rem;
     --sidebar-data-bottom-margin: 1.4rem;
     --sidebar-toolkit-list-item-padding: 0 1rem .4rem 0;
+    --toolkit-level1-font-size: 1.1rem
+    --toolkit-level2-font-size: 1rem;
+    --toolkit-level3-font-size: 0.95rem;
+    --toolkit-level3-color: #666;
     --sidebar-personal-label-width: 45%;
     --skills-bar-height: 4px;
     --skills-value-bar-color: #86c894;
@@ -323,6 +327,20 @@ h1, h2, h3, h4, h5, h6 {
 .list-toolkit .list-toolkit-item {
     padding: var(--sidebar-toolkit-list-item-padding);
 }
+
+.list-toolkit .list-toolkit-item.toolkit-level1 {
+    font-size: var(--toolkit-level1-font-size);
+}
+
+.list-toolkit .list-toolkit-item.toolkit-level2 {
+    font-size: var(--toolkit-level2-font-size);
+}
+
+.list-toolkit .list-toolkit-item.toolkit-level3 {
+    font-size: var(--toolkit-level3-font-size);
+    color: var(--toolkit-level3-color);
+}
+
 
 .list-content {
     padding: 0;
