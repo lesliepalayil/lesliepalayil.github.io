@@ -128,10 +128,10 @@ textarea {
     --sidebar-data-bottom-margin: 1.4rem;
     --sidebar-toolkit-list-item-padding: 0 1rem .4rem 0;
     --sidebar-personal-label-width: 45%;
-    --skills-bar-height: 2px;
-    --skills-value-bar-color: #666;
+    --skills-bar-height: 4px;
+    --skills-value-bar-color: #86c894;
     --skills-padding-bottom: .35rem;
-    --skills-bar-background-color: #fff;
+    --skills-bar-background-color: none;
    
     --resume-content-width: 61.8%;
     --resume-content-header-size: 1.4rem;
