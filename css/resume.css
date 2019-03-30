@@ -97,11 +97,12 @@ textarea {
    Author's custom styles
    ========================================================================== */
 :root {
+    --resume-body-background-color: #c3c3c3;
+    --resume-body-font-size: .93rem;
+    --resume-common-header-font-size: 1.2rem;
     --resume-default-text-color: #222;
     --resume-default-font: 'Roboto', sans-serif;
     --resume-label-font: 'Roboto Slab', sans-serif;
-    --body-background-color: #c3c3c3;
-    --body-font-size: .9rem;
     --resume-max-width: 1200px;
     --resume-min-width: 900px;
     --resume-standard-padding: 1.4rem;
@@ -110,62 +111,65 @@ textarea {
 
     --resume-background-color: #fefefe;
     --resume-shadow: 0 0 4px rgba(0,0,0,.3);
-    --resume-page-header-size: 2.2rem;
-    --resume-page-header-top-margin: 0.6rem;
+    --resume-page-header-font-size: 1.6rem;
+    --resume-page-header-top-margin: 1rem;
     --resume-page-subheader-margin: 1.5rem;
     --resume-label-color: #444;
     --resume-sep-color: #999;
 
-    --resume-sidebar-background-color: rgba(0,0,0,.03);
-    --resume-sidebar-border-color: rgba(0,0,0,.03);
-    --resume-sidebar-width: 30.2%;
     --resume-contact-icon-size: 22px;
     --resume-contact-icon-margin: 12px;
     --resume-contact-icon-listitem-margin-bottom: .8rem;
-    --resume-sidebar-header-size: 1.4rem;
+
+    --resume-sidebar-background-color: rgba(0,0,0,.03);
+    --resume-sidebar-border-color: rgba(0,0,0,.03);
+    --resume-sidebar-width: 30.2%;
+    --resume-sidebar-header-font-size: var(--resume-common-header-font-size);
     --resume-sidebar-header-bottom-margin: .4rem;
-    --sidebar-list-bottom-margin: .4rem;
-    --sidebar-data-bottom-margin: 1.4rem;
-    --sidebar-toolkit-list-item-padding: 0 1rem .4rem 0;
-    --toolkit-level1-font-size: 1rem;
-    --toolkit-level2-font-size: 0.95rem;
-    --toolkit-level3-font-size: 0.9rem;
-    --toolkit-level3-color: #444;
-    --sidebar-personal-label-width: 45%;
-    --skills-bar-height: 4px;
-    --skills-value-bar-color: #86c894;
-    --skills-padding-bottom: .35rem;
-    --skills-bar-background-color: none;
+    --resume-sidebar-list-bottom-margin: .4rem;
+    --resume-sidebar-data-bottom-margin: 1.4rem;
+    --resume-sidebar-toolkit-list-item-padding: 0 1rem .4rem 0;
+
+    --resume-sidebar-personal-label-width: 45%;
+    --resume-skills-bar-height: 4px;
+    --resume-skills-value-bar-color: #86c894;
+    --resume-skills-padding-bottom: .35rem;
+    --resume-skills-bar-background-color: none;
    
     --resume-content-width: 61.8%;
-    --resume-content-header-size: 1.4rem;
+    --resume-content-header-size: var(--resume-common-header-font-size);
     --resume-content-left-padding: 2.2rem;
-    --list-content-period-width: 6rem;
-    --list-content-header-font-size: 1.2rem;
-    --list-content-period-box-width: 66px;
-    --list-content-period-box-height: 75px;
-    --list-content-period-start-top-padding: 10px;
-    --list-content-period-box-border-radius: calc(var(--list-content-period-box-width)/2);
-    --list-content-period-line-color: #ccc;
-    --list-content-period-line-borderstyle: dashed;
-    --list-content-period-line-width: 1px;
-    --list-content-period-bottom-padding: 1rem;
-    --list-content-period-font-size: .75rem;
-    --list-content-period-current-color: #fde770;
-    --list-content-period-current-font-color: #000;
-    --list-content-period-default-color: rgba(240, 240, 240, 1);
-    --list-content-period-end-color: rgba(252, 252, 252, 1);
-    --list-content-period-color: #444;
-    --list-content-period-dash-border: 1px dotted var(--list-content-period-color);
-    --list-content-period-dash-width: 8px;
+
+    --resume-list-content-period-width: 6rem;
+    --resume-list-content-header-font-size: 1rem;
+    --resume-list-content-period-box-width: 66px;
+    --resume-list-content-period-box-height: 75px;
+    --resume-list-content-period-start-top-padding: 10px;
+    --resume-list-content-period-box-border-radius: calc(var(--resume-list-content-period-box-width)/2);
+    --resume-list-content-period-line-color: #ccc;
+    --resume-list-content-period-line-borderstyle: dashed;
+    --resume-list-content-period-line-width: 1px;
+    --resume-list-content-period-bottom-padding: 1rem;
+    --resume-list-content-period-font-size: .75rem;
+    --resume-list-content-period-current-color: #fde770;
+    --resume-list-content-period-current-font-color: #000;
+    --resume-list-content-period-default-color: rgba(240, 240, 240, 1);
+    --resume-list-content-period-end-color: rgba(252, 252, 252, 1);
+    --resume-list-content-period-color: #444;
+    --resume-list-content-period-dash-border: 1px dotted var(--resume-list-content-period-color);
+    --resume-list-content-period-dash-width: 8px;
+    --resume-list-content-innerheader-font-size: 1rem;
+    --resume-list-content-innerheader-margin: .3rem;
+    --resume-list-company-location-font-size: .85rem;
+    --resume-list-company-location-color: #666;
+    --resume-list-company-location-icon-size: 16px;
+    --resume-list-content-left-padding: 0.75rem;
+    --resume-list-content-header-bottom-margin: 6px;
+    --resume-list-content-header-border-radius: 4px;
+
     --resume-keyvalue-label-width: 33.2%;
     --resume-keyvalue-label-padding: .6rem;
     --resume-content-key-value-bottom-margin: .35rem;
-    --list-content-innerheader-font-size: 1rem;
-    --list-content-innerheader-margin: .3rem;
-    --company-location-font-size: .85rem;
-    --company-location-color: #666;
-    --company-location-icon-size: 16px;
 }
 
 
@@ -175,8 +179,8 @@ html {
 
 body {
     font-family: var(--resume-default-font);
-    background: var(--body-background-color);
-    font-size: var(--body-font-size);
+    background: var(--resume-body-background-color);
+    font-size: var(--resume-body-font-size);
     margin: 0;
     padding: 0;
     height: 100%;
@@ -198,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-header {
-    font-size: var(--resume-page-header-size);
+    font-size: var(--resume-page-header-font-size);
     margin: var(--resume-page-header-top-margin) 0 0;
     padding: 0 var(--resume-standard-padding);
 }
@@ -260,12 +264,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar-block-header {
-    font-size: var(--resume-sidebar-header-size);
+    font-size: var(--resume-sidebar-header-font-size);
     margin-bottom: var(--resume-sidebar-header-bottom-margin);
 }
 
 .content-block-header {
     font-size: var(--resume-content-header-size);
+    padding-left: var(--resume-list-content-left-padding);
 }
 
 .sidebar > .sidebar-block {
@@ -273,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar-block-data {
-    margin-bottom: var(--sidebar-data-bottom-margin);
+    margin-bottom: var(--resume-sidebar-data-bottom-margin);
 }
 
 .list-contact {
@@ -292,22 +297,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .list-skills .list-skills-item, .list-hobby .list-hobby-item, .list-personal-item {
-    margin-bottom: var(--sidebar-list-bottom-margin);
+    margin-bottom: var(--resume-sidebar-list-bottom-margin);
 }
 
 
 .list-skills .list-skills-item {
-   padding-bottom: var(--skills-padding-bottom)
+   padding-bottom: var(--resume-skills-padding-bottom)
 }
 
 .skillrating {
-   height: var(--skills-bar-height);
-   background: var(--skills-bar-background-color)
+   height: var(--resume-skills-bar-height);
+   background: var(--resume-skills-bar-background-color)
 }
 
 .skillrating-value {
    height: 100%;
-   background-color: var(--skills-value-bar-color);
+   background-color: var(--resume-skills-value-bar-color);
 }  
 
 .list-personal-item {
@@ -315,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .list-personal-item .resume-label {
-    width: var(--sidebar-personal-label-width);
+    width: var(--resume-sidebar-personal-label-width);
 }
 
 .list-toolkit {
@@ -325,24 +330,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .list-toolkit .list-toolkit-item {
-    padding: var(--sidebar-toolkit-list-item-padding);
-}
-
-.list-toolkit .list-toolkit-item.toolkit-level1 {
-    font-size: var(--toolkit-level1-font-size);
-}
-
-.list-toolkit .list-toolkit-item.toolkit-level2 {
-    font-size: var(--toolkit-level2-font-size);
-}
-
-.list-toolkit .list-toolkit-item.toolkit-level3 {
-    font-size: var(--toolkit-level3-font-size);
-    color: var(--toolkit-level3-color);
+    padding: var(--resume-sidebar-toolkit-list-item-padding);
 }
 
 .content > .content-block {
-    padding: 0 var(--resume-standard-padding) 0 var(--resume-content-left-padding);
+    padding: 0 var(--resume-standard-padding);
 }
 
 .list-content {
@@ -358,80 +350,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
 }
 
-.list-content-period::before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: calc(var(--list-content-period-width)/2 - 14px);
-    margin-left: -1px; 
-    width: 0;
-    border-right: var(--list-content-period-line-width) var(--list-content-period-line-borderstyle) var(--list-content-period-line-color);
-    content: "";
-    z-index: 0;
-}
-
-.list-content .list-content-item:last-child .list-content-period::before {
-    display: none;
-}
-
-.list-content-period {
-    box-sizing: border-box;
-    position: relative;
-    margin-right: var(--list-content-period-margin);
-    width: var(--list-content-period-width);
-    padding-bottom: var(--list-content-period-bottom-padding);
-}
-
-.list-content-period-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: var(--list-content-period-box-width);
-    height: var(--list-content-period-box-height);
-    border-radius: var(--list-content-period-box-border-radius) var(--list-content-period-box-border-radius) 0 0;
-    font-size: var(--list-content-period-font-size);
-    box-sizing: border-box;
-    text-align: center;
-    background: var(--list-content-period-default-color);
-    box-shadow: -2px 1px 1px rgba(0,0,0,.3);
-    z-index: 1;
-}
-
-.list-content-period-box span {
-    font-family: 'Roboto Slab', serif;
-    display: flex;
-    flex: 1 0 50%;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    color: var(--list-content-period-color);
-}
-
-.list-content-period-box span.period-start {
-    padding-top: var(--list-content-period-start-top-padding);
-}
-
-.list-content-period-box span.period-end {
-   position: relative;
-   background: var(--list-content-period-end-color);
-}
-
-.list-content-period-box.list-content-period-box-present {
-    background: var(--list-content-period-current-color);
-}
-
-.list-content-period-box.list-content-period-box-present span {
-    color: var(--list-content-period-current-font-color);
-}
-
-.list-content-period-box.list-content-period-box-present span.period-end {
-    padding-bottom: 12px;
-}
-
-.list-content-period-box.list-content-period-box-present span.period-end::before {
-    display: none;
-}
-
 .list-content-details {
     flex: 1 0 0%;
     box-sizing: border-box;
@@ -444,39 +362,65 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
 }
 
+.list-content-header-wrap {
+    display: flex;
+    background: #f9f9f9;
+    border-left: calc(var(--resume-list-content-header-border-radius) + 2px) solid #dedede;
+    padding: calc(var(--resume-list-content-left-padding)/2) var(--resume-list-content-left-padding);
+    margin-bottom: var(--resume-list-content-header-bottom-margin);
+    border-radius: var(--resume-list-content-header-border-radius);
+}
+
+.list-content-item.current .list-content-header-wrap {
+    border-left-color: #86c894
+}
+
 .list-content-header {
-    font-size: var(--list-content-header-font-size);
+    flex: 1
+}
+
+.list-content-header .designation, .list-content-header .company-name{
+    font-size: var(--resume-list-content-header-font-size);
     margin: 0;
 }
 
-.list-content-subheader {
-    margin: 0 0 10px;
+.list-content-header-period {
+    align-self: center;
+}
+
+.company-location, .company-period {
+    text-align: right;
+    font-size: var(--resume-list-company-location-font-size);    
 }
 
 .company-location {
-    float: right;
-    font-size: var(--company-location-font-size);
-    color: var(--company-location-color);
+    color: var(--resume-list-company-location-color);
 }
 
 .company-location::before {
     content: "";
     display: inline-block;
-    width: var(--company-location-icon-size);
-    height: var(--company-location-icon-size);
-    background-size: var(--company-location-icon-size);
+    width: var(--resume-list-company-location-icon-size);
+    height: var(--resume-list-company-location-icon-size);
+    background-size: var(--resume-list-company-location-icon-size);
     vertical-align: middle;
     opacity: .5;
     margin: -2px 0 0 5px; 
 }
 
+.company-period .period-end::before {
+    content: "-";
+    padding: 0 5px;
+}
+
 .list-content-data {
     line-height: 1.6;
+    padding-left: calc(var(--resume-list-content-header-border-radius) + var(--resume-list-content-left-padding) + 2px);
 }
 
 .list-content-innerheader {
-    font-size: var(--list-content-innerheader-font-size);
-    margin: var(--list-content-innerheader-margin) 0 var(--list-content-innerheader-margin);
+    font-size: var(--resume-list-content-innerheader-font-size);
+    margin: var(--resume-list-content-innerheader-margin) 0 var(--resume-list-content-innerheader-margin);
 }
 
 .resume-content-key-value {
