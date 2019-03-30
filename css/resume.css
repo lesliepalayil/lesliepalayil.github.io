@@ -109,6 +109,8 @@ textarea {
     --resume-standard-margin: 0.67rem;
     --resume-bottom-padding: 2rem;
 
+    --resume-common-bar-color: #86c894;
+
     --resume-background-color: #fefefe;
     --resume-shadow: 0 0 4px rgba(0,0,0,.3);
     --resume-page-header-font-size: 1.6rem;
@@ -132,7 +134,7 @@ textarea {
 
     --resume-sidebar-personal-label-width: 45%;
     --resume-skills-bar-height: 4px;
-    --resume-skills-value-bar-color: #86c894;
+    --resume-skills-value-bar-color: var(--resume-common-bar-color);
     --resume-skills-padding-bottom: .35rem;
     --resume-skills-bar-background-color: none;
    
@@ -165,7 +167,8 @@ textarea {
     --resume-list-company-location-icon-size: 16px;
     --resume-list-content-left-padding: 0.75rem;
     --resume-list-content-header-bottom-margin: 6px;
-    --resume-list-content-header-border-radius: 4px;
+    --resume-list-content-header-border-radius: 0;
+    --resume-list-content-header-border-offsetwidth: 0;
 
     --resume-keyvalue-label-width: 33.2%;
     --resume-keyvalue-label-padding: .6rem;
@@ -364,15 +367,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .list-content-header-wrap {
     display: flex;
-    background: #f9f9f9;
-    border-left: calc(var(--resume-list-content-header-border-radius) + 2px) solid #dedede;
+    border-bottom: 1px solid #dedede;
+    border-left: calc(var(--resume-list-content-header-border-radius) + var(--resume-list-content-header-border-offsetwidth)) solid transparent;
     padding: calc(var(--resume-list-content-left-padding)/2) var(--resume-list-content-left-padding);
     margin-bottom: var(--resume-list-content-header-bottom-margin);
     border-radius: var(--resume-list-content-header-border-radius);
 }
 
+.list-content-header-wrap-no-content {
+    border-bottom: none;
+}
+
 .list-content-item.current .list-content-header-wrap {
-    border-left-color: #86c894
+    border-bottom-color: var(--resume-common-bar-color);
 }
 
 .list-content-header {
@@ -415,7 +422,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .list-content-data {
     line-height: 1.6;
-    padding-left: calc(var(--resume-list-content-header-border-radius) + var(--resume-list-content-left-padding) + 2px);
+    padding-left: var(--resume-list-content-left-padding);
 }
 
 .list-content-innerheader {
